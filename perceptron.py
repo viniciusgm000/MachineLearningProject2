@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- encoding: iso-8859-1 -*-
 
-# KNN classifier
+# Perceptron classifier
 
 import sys
 import numpy
 #from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import Perceptron
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn.datasets import load_svmlight_file
@@ -31,8 +31,8 @@ def main(train, test):
         # X_train = scaler.fit_transform(X_train)
         # X_test = scaler.fit_transform(X_test)
         
-        # cria um kNN
-        model = KNeighborsClassifier(n_neighbors=3, metric='euclidean')
+        #Create a Gaussian Classifier
+        model = Perceptron()
 
         #print ('Fitting knn')
         model.fit(X_train, y_train)
@@ -52,7 +52,7 @@ def main(train, test):
 
 if __name__ == "__main__":
         if len(sys.argv) != 3:
-                sys.exit("Use: knn.py <train> <test>")
+                sys.exit("Use: perceptron.py <train> <test>")
 
         main(sys.argv[1], sys.argv[2])
 
