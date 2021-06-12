@@ -32,7 +32,7 @@ def main(train, test):
         # X_test = scaler.fit_transform(X_test)
         
         #Create a Gaussian Classifier
-        model = LR(solver='lbfgs', max_iter=140)
+        model = LR(solver='lbfgs', max_iter=150)
 
         #print ('Fitting knn')
         model.fit(X_train, y_train)
